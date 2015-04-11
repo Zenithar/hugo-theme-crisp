@@ -1,8 +1,8 @@
 {{ $baseurl := .Site.BaseURL }}
-{{ partial "header.html" . }}
-	<main id="content">
-<article id="{{ .Slug }}" class="{{ .Type }}">
-	<div class="post-stamp">
+<section id="{{ .Slug }}" class="{{ .Section }}">
+	<h3 class="post-title">
+		<a href="{{ .Permalink }}">{{ .Title }}</a>
+		<span class="separator"> &middot; </span>
 		<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
             {{ .Date.Format "2 Jan 2006" }}
         </time>
@@ -14,10 +14,5 @@
         {{ end }}
     	{{ end }}
 		</span>
-	</div>
-	<h1 class="post-title">{{ .Title }}</h1>
-	{{ .Content }}
-	{{ partial "share.html" . }}
-</article>  
-	</main>
-{{ partial "footer.html" . }}
+	</h3>
+</section>
