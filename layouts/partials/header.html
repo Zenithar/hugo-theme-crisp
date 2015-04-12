@@ -28,13 +28,6 @@
         <meta name="description" content="{{ .Site.Params.description }}" />
     {{ end }}
         
-        <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
-        <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/crisp.css">
-        <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/rrssb.css">
-        
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
@@ -54,6 +47,8 @@
         <link href="{{.RSSLink}}" rel="alternate" type="application/rss+xml" title="{{ if ne .URL "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}" />
     {{end}}
         <link rel="canonical" href="{{ .Permalink }}" />
+
+    {{ partial "criticalpath.html" . }}
     </head>
     <body>
         <header id="header">

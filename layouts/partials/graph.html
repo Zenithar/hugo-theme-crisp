@@ -1,0 +1,4 @@
+{{ $baseurl := .Site.BaseUrl }}
+<div id="graph">
+  &nbsp;{{if .Prev}}<a href="{{.Prev.Permalink}}" title="Previous Post: {{.Prev.Title}}" class="navlinks-prev">&laquo; {{.Prev.Title}}</a>{{end}} &nbsp;{{if .Next}}<a href="{{.Next.Permalink}}" title="Next Post: {{.Next.Title}}" class="navlinks-next">{{.Next.Title}} &raquo;</a>{{end}}
+</div>
