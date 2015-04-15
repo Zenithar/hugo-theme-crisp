@@ -3,19 +3,19 @@
 
 name = "Crisp"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
-homepage = "http://siteforthistheme.com/"
-tags = ["", ""]
+licenselink = "https://github.com/Zenithar/hugo-theme-crisp/blob/master/LICENSE.md"
+description = "Ghost crisp theme ported to Hugo"
+homepage = "https://blog.zenithar.org/"
+tags = ["ghost", "minimal"]
 features = ["", ""]
-min_version = 0.13
+min_version = 0.14
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Thibault NORMAND"
+  homepage = "http://zenithar.org"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Kathy Qian"
+  homepage = "https://github.com/kathyqian"
+  repo = "https://github.com/kathyqian/crisp-ghost-theme"
