@@ -13,9 +13,15 @@
     {{ if .IsPage }}
         <meta property="og:type" content="article" />
         <meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
-        {{ range .Params.tags }}
-        <meta property="og:article:tag" content="{{ . }}" />
+        {{ range .Params.tags }}<meta property="og:article:tag" content="{{ . }}" />
         {{ end }}
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@{{ .Site.Params.twitter }}" />
+        <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}" />
+        <meta name="twitter:title" content="{{ .Title }}" />
+        <meta name="twitter:description" content="{{ .Description }}" />
+        <meta name="twitter:url" content="{{ .Permalink }}" />
     {{ else }}
         <meta property="og:type" content="website" />
     {{ end }}
@@ -48,6 +54,23 @@
     {{end}}
         <link rel="canonical" href="{{ .Permalink }}" />
 
+    {{ if .IsPage }}
+    <script type="application/ld+json">
+    { 
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "{{ .Title }}",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/{{ .Site.Params.gplus }}?rel=author"
+        },
+        "datePublished": "{{ .Date.Format "2006-01-02" }}",
+        "description": "{{ .Description }}",
+        "wordCount": {{ .WordCount }}
+    }
+    </script>
+    {{ end }}
+    
     {{ partial "criticalpath.html" . }}
     </head>
     <body>
