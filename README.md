@@ -1,13 +1,13 @@
-# Crisp 
+# Crisp
 
 A minimalist, responsive, and open-source theme for [Hugo](http://gohugo.io/) by [Kathy Qian](http://kathyqian.com).
 
-![Index](https://raw.github.com/kathyqian/crisp-ghost-theme/master/screenshots/index.png)   
+![Index](https://raw.github.com/kathyqian/crisp-ghost-theme/master/screenshots/index.png)
 
 ### Required Steps for Installation
 
 1. Download the files
-2. Manually add/remove all links to static pages by copying (or deleting) the code in **partials/navigation.hbs**    
+2. Manually add/remove all links to static pages by copying (or deleting) the code in **partials/navigation.hbs**
 3. Replace the `example` disqus_shortname with your shortname on *line 4* of **partials/comments.hbs**, or delete the #comments div to remove comments altogether
 4. Configure the follow buttons in **partials/follow.hbs** (see section below)
 5. Add the folder to the **content/themes** directory of your Ghost installation
@@ -22,9 +22,9 @@ A minimalist, responsive, and open-source theme for [Hugo](http://gohugo.io/) by
 
 ### Editing Follow Buttons
 
-Crisp uses Font Awesome for icons. See the Font Awesome documentation for the [full list of icons](http://fortawesome.github.io/Font-Awesome/icons/) and [usage tips](http://fortawesome.github.io/Font-Awesome/examples/). 
+Crisp uses Font Awesome for icons. See the Font Awesome documentation for the [full list of icons](http://fortawesome.github.io/Font-Awesome/icons/) and [usage tips](http://fortawesome.github.io/Font-Awesome/examples/).
 
-I have placed some common buttons in **follow.hbs**, with more options in the commented out sections. Make sure to replace the `username` in the URLs so the links point to your profiles. 
+I have placed some common buttons in **follow.hbs**, with more options in the commented out sections. Make sure to replace the `username` in the URLs so the links point to your profiles.
 
 ### Features, Changelog, and Technical Notes
 
@@ -34,7 +34,7 @@ This theme has been updated for Ghost 0.5.8 and is compatible with all modern ve
 
 **Version 0.5.0 &mdash; March 5, 2015**
 
-* Restructured file repository for easier updates (BREAKING CHANGE) 
+* Restructured file repository for easier updates (BREAKING CHANGE)
 * Added code highlighting with highlight.js
 
 Please see the [wiki](https://github.com/kathyqian/crisp-ghost-theme/wiki/) for details regarding previous releases.
@@ -47,7 +47,7 @@ Social sharing buttons are a modified version of the [Ridiculously Responsive So
 
 ### License
 
-This theme is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/) license. Go crazy on the customizations, distribute to your friends, just give me some credit and don't sell my work. Feel free to modify the footer text, though I would really appreciate it if you could keep at least one of the links intact.
+This theme is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/) license. Go crazy on the customizations, distribute to your friends, just give me some credit. Feel free to modify the footer text, though I would really appreciate it if you could keep at least one of the links intact.
 
 ### More Screenshots
 
