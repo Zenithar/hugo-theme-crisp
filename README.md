@@ -4,22 +4,6 @@ A minimalist, responsive, and open-source theme for [Hugo](http://gohugo.io/) by
 
 ![Index](https://raw.github.com/kathyqian/crisp-ghost-theme/master/screenshots/index.png)
 
-### Required Steps for Installation
-
-1. Download the files
-2. Manually add/remove all links to static pages by copying (or deleting) the code in **partials/navigation.hbs**
-3. Replace the `example` disqus_shortname with your shortname on *line 4* of **partials/comments.hbs**, or delete the #comments div to remove comments altogether
-4. Configure the follow buttons in **partials/follow.hbs** (see section below)
-5. Add the folder to the **content/themes** directory of your Ghost installation
-6. Select the theme in the settings page of your Ghost admin panel
-
-### Suggested Customizations
-
-* Change the link color on *line 87* in **assets/styles/crisp.css**
-* Add code for Google Analytics in **default.hbs** after `{{ghost_foot}}`
-* Remove irrelevant social sharing services in **partials/share.hbs**
-* Change your blog logo to change the favicon and the picture in the sidebar (the blog cover is not used)
-
 ### Editing Follow Buttons
 
 Crisp uses Font Awesome for icons. See the Font Awesome documentation for the [full list of icons](http://fortawesome.github.io/Font-Awesome/icons/) and [usage tips](http://fortawesome.github.io/Font-Awesome/examples/).
