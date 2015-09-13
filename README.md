@@ -12,18 +12,11 @@ I have placed some common buttons in **follow.hbs**, with more options in the co
 
 ### Features, Changelog, and Technical Notes
 
-Below is a summary of updates since the initial release. If you need more detail, I suggest reading the [full commit history](https://github.com/kathyqian/crisp-ghost-theme/commits/master/). For an idea of the roadmap and open issues, please refer to the [current open issues](https://github.com/kathyqian/crisp-ghost-theme/issues?state=open).
-
-This theme has been updated for Ghost 0.5.8 and is compatible with all modern versions of Chrome, Firefox, Safari, and IE9+.
-
-**Version 0.5.0 &mdash; March 5, 2015**
-
-* Restructured file repository for easier updates (BREAKING CHANGE)
-* Added code highlighting with highlight.js
-
 Please see the [wiki](https://github.com/kathyqian/crisp-ghost-theme/wiki/) for details regarding previous releases.
 
 ### Credits
+
+[Kathy Qian](http://kathyqian.com) for its initial Ghost theme.
 
 Many thanks to [@davegandy](http://twitter.com/davegandy) for the [Font Awesome](https://github.com/FortAwesome/Font-Awesome) icons used throughout the theme.
 
