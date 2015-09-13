@@ -33,6 +33,10 @@ Social sharing buttons are a modified version of the [Ridiculously Responsive So
 
 This theme is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/) license. Go crazy on the customizations, distribute to your friends, just give me some credit. Feel free to modify the footer text, though I would really appreciate it if you could keep at least one of the links intact.
 
+### Caution
+
+Related documents only works with my Hugo fork [zenithar/hugo](https://github.com/zenithar/hugo).
+
 ### More Screenshots
 
 ![Post](https://raw.github.com/kathyqian/crisp-ghost-theme/master/screenshots/post.png)
