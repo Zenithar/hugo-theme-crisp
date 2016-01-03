@@ -2,7 +2,7 @@
   <section>
     <h5>Pour un peu plus de lecture ...</h5>
     <ul>
-      {{ range first 5 .RelatedPages }}
+      {{ range first 5 .Site.Pages }}
       <li>
         <a href="{{ .Permalink }}">{{ .Title }} - {{ .ReadingTime }} Minutes</a>
       </li>
