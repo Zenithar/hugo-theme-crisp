@@ -9,7 +9,7 @@
         </time>
         <span class="taglist">
         {{if .Params.tags }}
-        &middot; 
+        &middot;
         {{ range $index, $tag := .Params.tags }}
             <a href="{{ $baseurl }}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
         {{ end }}
@@ -19,10 +19,9 @@
     <h1 class="post-title">{{ .Title }}</h1>
     {{ .Content }}
     {{ partial "share.html" . }}
-    {{ partial "related.html" . }}
     {{ partial "author.html" . }}
     {{ partial "comments.html" . }}
-</article>  
+</article>
 
 </main>
 {{ partial "footer.html" . }}
