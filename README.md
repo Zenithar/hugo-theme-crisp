@@ -4,6 +4,17 @@ A minimalist, responsive, and open-source theme for [Hugo](http://gohugo.io/) by
 
 ![Index](https://raw.github.com/kathyqian/crisp-ghost-theme/master/screenshots/index.png)
 
+### Enabling Disqus comments
+This theme requires a variable called 'disqus' to be defined in your **config.toml** for your Hugo site.
+
+Make sure that the variable 'disqus' is defined in the 'Params' section, like so:
+
+```
+[Params]
+
+disqus = "replace-this-with-your-disqus-shortname"
+```
+
 ### Editing Follow Buttons
 
 Crisp uses Font Awesome for icons. See the Font Awesome documentation for the [full list of icons](http://fortawesome.github.io/Font-Awesome/icons/) and [usage tips](http://fortawesome.github.io/Font-Awesome/examples/).
