@@ -2,8 +2,6 @@
 
 A minimalist, responsive, and open-source theme for [Hugo](http://gohugo.io/) by [Kathy Qian](http://kathyqian.com).
 
-![Index](https://raw.github.com/kathyqian/crisp-ghost-theme/master/screenshots/index.png)
-
 ### Enabling Disqus comments
 This theme requires a variable called 'disqus' to be defined in your **config.toml** for your Hugo site.
 
@@ -21,9 +19,6 @@ Crisp uses Font Awesome for icons. See the Font Awesome documentation for the [f
 
 I have placed some common buttons in **follow.hbs**, with more options in the commented out sections. Make sure to replace the `username` in the URLs so the links point to your profiles.
 
-### Features, Changelog, and Technical Notes
-
-Please see the [wiki](https://github.com/kathyqian/crisp-ghost-theme/wiki/) for details regarding previous releases.
 
 ### Credits
 
@@ -36,10 +31,6 @@ Social sharing buttons are a modified version of the [Ridiculously Responsive So
 ### License
 
 This theme is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/) license. Go crazy on the customizations, distribute to your friends, just give me some credit. Feel free to modify the footer text, though I would really appreciate it if you could keep at least one of the links intact.
-
-### Caution
-
-Related documents only works with my Hugo fork [zenithar/hugo](https://github.com/zenithar/hugo).
 
 ### More Screenshots
 
