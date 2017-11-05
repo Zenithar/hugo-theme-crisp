@@ -3,7 +3,7 @@
     <div id="content">
         {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
         {{ range $paginator.Pages }}
-            {{ .Render "li" }}
+            {{ .Render "index" }}
         {{ end }}
         {{ partial "pagination.html" $paginator }}
     </div>

@@ -1,0 +1,21 @@
+<div class="article" id="{{ .Slug }}" class="{{ .Type }}">
+    <div class="post-stamp">
+        <a href="{{ .Permalink }}"><h1 class="post-title">{{ .Title }}</h1></a>
+        <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}{{ if not .Site.Params.hideReadingTime }} &middot; {{ .ReadingTime }} minute read{{ end }}</span>
+        {{ if isset .Params "categories" }}
+        <span class="taglist">
+            {{ range .Params.categories }}<a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}
+        </span>
+        {{ end }}
+
+        <span class="taglist">
+            {{if .Params.tags }}
+            &middot;
+            {{ range $index, $tag := .Params.tags }}
+            <a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>
+            {{ end }}
+            {{ end }}
+        </span>
+    </div>
+    {{ .Content }}
+</div>
