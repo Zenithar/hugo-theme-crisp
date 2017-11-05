@@ -34,4 +34,24 @@
         {{ with .Site.Params.keybase }}<a href="{{ . }}" target="_blank"><i class="fa fa-key fa-3x"></i></a>{{ end }}
         {{ if .Site.Params.rss }}<a href="{{ "/index.xml" | absURL }}" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>{{ end }}
     </div>
+
+    {{ if isset .Site.Params "creativecommon" }}
+        <div class="cc">
+            {{ if eq .Site.Params.creativecommon "cc-by-nc-nd" }}
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+            {{ end }}
+            {{ if eq .Site.Params.creativecommon "cc-by-nc" }}
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>
+            {{ end }}
+            {{ if eq .Site.Params.creativecommon "cc-by-nc-sa" }}
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+            {{ end }}
+            {{ if eq .Site.Params.creativecommon "cc-by" }}
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+            {{ end }}
+            {{ if eq .Site.Params.creativecommon "cc-by-sa" }}
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+            {{ end }}
+        </div>
+    {{ end }}
 </div>

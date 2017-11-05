@@ -21,7 +21,9 @@
                 </span>
             </div>
             {{ .Content }}
-            {{ partial "share.html" . }}
+            {{ if .Site.Params.share }}
+                {{ partial "share.html" . }}
+            {{ end }}
             {{ partial "comments.html" . }}
         </div>
     </div>

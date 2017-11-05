@@ -41,6 +41,11 @@ body {
 	padding-bottom: 1.7em;
 	max-width: 56em;
 }
+
+.cc {
+    text-align: center;
+}
+
 p, hr, h4, h5, h6 {
 	margin-top: 0.9em;
 	margin-bottom: 0.9em;
