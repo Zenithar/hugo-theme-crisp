@@ -36,7 +36,7 @@ body {
 	line-height: 1.5em;
 	color: #888;
 }
-article {
+.article {
 	border-bottom: 0.1em #eee solid;
 	padding-bottom: 1.7em;
 	max-width: 56em;
@@ -198,7 +198,7 @@ input {
 	margin-top:0.5em;
 }
 /* Posts */
-article span.post-stamp {
+.article span.post-stamp {
 	color:#888;
 }
 h1.post-title {
@@ -234,6 +234,19 @@ h3.post-title {
 	-moz-border-radius: 0.25em;
 	-webkit-border-radius: 0.25em;
 }
+
+.taglist a:hover {
+    background-color: #000;
+}
+
+.article .taglist a {
+    background-color:#000;
+}
+
+.article .taglist {
+    margin-left: 3em;
+}
+
 #social-bar {
 	margin-top:1.5em;
 	background-color:#eee;
@@ -243,6 +256,19 @@ h3.post-title {
 	margin-top: 0.15em;
 	padding-bottom: 0.2em;
 	border-bottom: 1px solid #eee;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
 }
 /* Footer */
 .pagination {
@@ -257,6 +283,8 @@ h3.post-title {
 	color:#444;
 	text-decoration: none;
 }
+
+
 /* Large Screens */
 @media only screen and (min-width: 1281px) {
 	html, body {

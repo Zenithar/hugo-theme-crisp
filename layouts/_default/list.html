@@ -1,13 +1,11 @@
 {{ partial "header.html" . }}
-
-<main id="content">
-{{ $paginator := .Paginator }}
-	<h1 class="post-title">{{ .Title }}</h1> 
-    {{ range $index, $page := .Paginator.Pages }}
-        {{ .Render "li" }}
-    {{ end }}
-
-    {{ partial "pagination.html" $paginator }}
-</main>
-
+    {{ partial "sidebar.html" . }}
+    <div id="content">
+        {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{ range $paginator.Pages }}
+            {{ .Render "li" }}
+        {{ end }}
+        {{ partial "pagination.html" $paginator }}
+    </div>
 {{ partial "footer.html" . }}

@@ -1,27 +1,14 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ partial "header.html" . }}
-<main id="content">
-
-<article id="{{ .Slug }}" class="{{ .Type }}">
-    <div class="post-stamp">
-        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-            {{ .Date.Format "2 Jan 2006" }}
-        </time>
-        <span class="taglist">
-        {{if .Params.tags }}
-        &middot;
-        {{ range $index, $tag := .Params.tags }}
-            <a href="{{ $baseurl }}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
-        {{ end }}
-        {{ end }}
-        </span>
+    {{ partial "sidebar.html" . }}
+    <div id="content">
+        <div class="article" id="{{ .Slug }}" class="{{ .Type }}">
+            <div class="post-stamp">
+                <h1 class="post-title">{{ .Title }}</h1>
+            </div>
+            {{ .Content }}
+            {{ partial "share.html" . }}
+            {{ partial "comments.html" . }}
+        </div>
     </div>
-    <h1 class="post-title">{{ .Title }}</h1>
-    {{ .Content }}
-    {{ partial "share.html" . }}
-    {{ partial "author.html" . }}
-    {{ partial "comments.html" . }}
-</article>
-
-</main>
 {{ partial "footer.html" . }}
