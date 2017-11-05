@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{.Site.LanguageCode}}">
-
     <head>
-
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
         <meta property="og:title" content="{{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}" />
         <meta property="og:site_name" content="{{ .Site.Title }}" />
         <meta property="og:url" content="{{ .Permalink }}" />
@@ -33,7 +30,7 @@
     {{ else }}
         <meta name="description" content="{{ .Site.Params.description }}" />
     {{ end }}
-        
+
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
@@ -43,42 +40,41 @@
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->  
+        <![endif]-->
 
-    {{ if ne .URL "/" }}
-        <link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    {{ end }}
+        <!-- CSS -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ "/css/crisp.css" | absURL }}">
+        {{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ "/css/highlight/" | absURL }}{{ .Site.Params.highlight }}.css">{{ end }}
+        {{ with .Site.Params.customCSS }}<link rel="stylesheet" href="{{ . }}">{{ end }}
 
-    {{if .IsNode}}
-        <link href="{{.RSSLink}}" rel="alternate" type="application/rss+xml" title="{{ if ne .URL "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}" />
-    {{end}}
+        <!-- RSS -->
+        {{ $siteTitle := .Site.Title }}
+        {{ $authorName := .Site.Author.name }}
+        {{ with .RSSLink }}<link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $siteTitle }} &middot; {{ $authorName }}" />{{ end }}
+
         <link rel="canonical" href="{{ .Permalink }}" />
 
     {{ if .IsPage }}
-    <script type="application/ld+json">
-    { 
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "headline": "{{ .Title }}",
-        "author": {
-            "@type": "Person",
-            "name": "http://profiles.google.com/{{ .Site.Params.gplus }}?rel=author"
-        },
-        "datePublished": "{{ .Date.Format "2006-01-02" }}",
-        "description": "{{ .Description }}",
-        "wordCount": {{ .WordCount }}
-    }
-    </script>
+        {{ with .Site.Params.googleplus }}
+            <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Article",
+                "headline": "{{ .Title }}",
+                "author": {
+                    "@type": "Person",
+                    "name": "http://profiles.google.com/{{ . }}?rel=author"
+            },
+            "datePublished": "{{ .Date.Format "2006-01-02" }}",
+            "description": "{{ .Description }}",
+            "wordCount": {{ .WordCount }}
+            }
+            </script>
+        {{ end }}
     {{ end }}
-    
-    {{ partial "criticalpath.html" . }}
+
     </head>
     <body>
-        <header id="header">
-            <a id="logo" href="{{ .Site.BaseURL }}"><img src="https://www.gravatar.com/avatar/1a2807faf3cca1667ff6f04bf5886eff.png" alt="{{ .Site.Title }}" /></a>
-            <h1><a href="{{.Site.BaseURL}}">{{.Site.Title}}</a></h1>
-            <p>{{.Description}}</p>
-
-            {{ partial "follow.html" . }}
-            {{ partial "navigation.html" . }}
-        </header>
