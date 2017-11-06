@@ -1,16 +1,30 @@
-{{ $baseurl := .Site.BaseURL }}
-{{ partial "header.html" . }}
-    {{ partial "sidebar.html" . }}
-    <div id="content">
-        <div class="article" id="{{ .Slug }}" class="{{ .Type }}">
-            <div class="post-stamp">
-                <h1 class="post-title">{{ .Title }}</h1>
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}">
+    <head>
+        {{ partial "header.html" . }}
+    </head>
+    <body>
+        <div id="layout" class="pure-g">
+            <div class="sidebar pure-u-1 pure-u-md-1-6">
+                {{ partial "sidebar.html" . }}
             </div>
-            {{ .Content }}
-            {{ if .Site.Params.share }}
-                {{ partial "share.html" . }}
-            {{ end }}
-            {{ partial "comments.html" . }}
+            <div class="content pure-u-1 pure-u-md-5-6">
+                <div class="singlepage">
+                    <div class="article" id="{{ .Slug }}" class="{{ .Type }}">
+                        <div class="post-stamp">
+                            <h1 class="post-title">{{ .Title }}</h1>
+                        </div>
+                        {{ .Content }}
+                        {{ if .Site.Params.share }}
+                            {{ if eq .Site.Params.share "all" }}
+                                {{ partial "share.html" . }}
+                            {{ end }}
+                        {{ end }}
+                        {{ partial "comments.html" . }}
+                    </div>
+                </div>
+                {{ partial "footer.html" . }}
+            </div>
         </div>
-    </div>
-{{ partial "footer.html" . }}
+    </body>
+</html>

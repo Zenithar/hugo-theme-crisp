@@ -1,49 +1,82 @@
-* {
-	padding: 0;
-	margin: 0;
-}
 /* Basic Typography */
-html, body {
-	font-size: 1em;
-	line-height: 1.65em;
+html, button, input, select, textarea,
+    .pure-g [class *= "pure-u"] {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 	color:#444;
+	font-size: 1em;
+	line-height: 1.65em;
 }
-html {
-	height: 100%;
-}
-body {
-	padding: 2em 2.5em 1em 20em;
-}
-/* Blocks */
-#header {
+/* Sidebar */
+.header {
 	border-right: 1px #eee solid;
-	padding: 2em;
-	position:fixed;
-	top: 0;
-	left: 0;
-	height:100%;
-	width:13.5em;
+	height: 100%;
+        padding: 20% 2em 0;
+        text-align: center;
 }
-#content {
-	display: block;
-	width: 100%;
+.header h1 {
+	font-size:1.9em;
+	margin-top:0.8em;
+	margin-bottom:0.6em;
 }
+.header h1 a {
+	color:#444;
+}
+.header h1 a:hover {
+	text-decoration:none;
+}
+.header #logo img {
+	border: none;
+        width:80%;
+        display: block;
+        margin: auto;
+}
+.header h6 {
+	margin-top:0.5em;
+}
+.header .roundlogo img {
+	width:9em;
+	height:9em;
+	border-radius:4.5em;
+	-moz-border-radius: 4.5em;
+	-webkit-border-radius: 4.5em;
+}
+.cc {
+    text-align: center;
+}
+
+/*********************** Content *****************/
+.index-list, .singlepage {
+    padding: 2em 1em 0;
+}
+
+.article {
+	padding-bottom: 1.7em;
+	max-width: 56em;
+}
+.index-list .article {
+    border-bottom: 0.1em #eee solid;
+}
+.pagination {
+	margin-bottom:1em;
+        margin-top: 2em;
+}
+
+/*************** footer **************/
 #footer {
-	padding: 1em 0em 2.5em 0em;
+	padding: 1em 0em 2.5em 2em;
 	font-size:0.8em;
 	line-height: 1.5em;
 	color: #888;
 }
-.article {
-	border-bottom: 0.1em #eee solid;
-	padding-bottom: 1.7em;
-	max-width: 56em;
+#footer a {
+	font-weight:300;
+	color:#888;
+	text-decoration: underline;
 }
-
-.cc {
-    text-align: center;
+#footer a:hover {
+	color:#444;
+	text-decoration: none;
 }
 
 p, hr, h4, h5, h6 {
@@ -74,13 +107,13 @@ h3 {
 	margin-bottom: 0.8em;
 }
 h4 {
-	font-size:1.3em;
-}
-h5 {
 	font-size:1.2em;
 }
-h6 {
+h5 {
 	font-size:1.1em;
+}
+h6 {
+	font-size:1.0em;
 }
 /* Page Elements */
 img, iframe {
@@ -110,9 +143,9 @@ hr{
 	height: 1px;
 	background: #eee;
 }
-ul, ol {
+/*ul, ol {
 	margin-left: 3em;
-}
+}*/
 code {
 	font-size:1.4em;
 	background: #eee;
@@ -133,33 +166,6 @@ input {
 	font-size:1em;
 	padding: 0.3em;
 }
-/* Sidebar */
-#header h1 {
-	font-size:1.9em;
-	margin-top:0.8em;
-	margin-bottom:0.6em;
-}
-#header h1 a {
-	color:#444;
-}
-#header h1 a:hover {
-	text-decoration:none;
-}
-#header #logo img {
-	border: none;
-        width:80%;
-        display: block;
-        margin: auto;
-}
-
-#header .roundlogo img {
-	width:9em;
-	height:9em;
-	border-radius:4.5em;
-	-moz-border-radius: 4.5em;
-	-webkit-border-radius: 4.5em;
-}
-
 .title {
     margin-bottom: 50px;
 }
@@ -175,6 +181,7 @@ input {
 .sidebar-menu {
     list-style: none;
     margin-bottom: 2em;
+    padding-left: 0em;
 }
 
 .sidebar-menu-item {
@@ -198,9 +205,6 @@ input {
 #follow-icons span .fa-stack-1x {
 	font-size:1.05em;
 	line-height:1.9em;
-}
-#header h6 {
-	margin-top:0.5em;
 }
 /* Posts */
 .article span.post-stamp {
@@ -275,19 +279,6 @@ h3.post-title {
     vertical-align: baseline;
     border-radius: .25em;
 }
-/* Footer */
-.pagination {
-	margin-bottom:1em;
-}
-#footer a {
-	font-weight:300;
-	color:#888;
-	text-decoration: underline;
-}
-#footer a:hover {
-	color:#444;
-	text-decoration: none;
-}
 
 
 /* Large Screens */
@@ -295,13 +286,16 @@ h3.post-title {
 	html, body {
 		font-size: 1.1em;
 	}
+    .index-list, .singlepage {
+        padding: 2em 3em 0;
+    }
 }
 /* Small Screens */
 @media only screen and (max-width: 800px) {
 	body {
 		padding:0;
 	}
-	header {
+	.header {
 		border-right: none;
 		border-bottom: 1px #eee solid;
 		position:relative;
@@ -309,7 +303,11 @@ h3.post-title {
 		width:auto;
 		text-align:center;
 		padding-bottom:1em;
+		padding-top:1em;
 	}
+        .title {
+            margin-bottom:0.5em
+        }
 	#content {
 		margin-left: 0;
 		padding: 2em 2em 1em 2em;
@@ -318,6 +316,9 @@ h3.post-title {
 	footer {
 		padding: 0 2.5em 2em 2.5em;
 	}
+        .logo {
+            display:none;
+        }
 }
 /* Tiny Screens */
 @media only screen and (max-width: 320px) {
