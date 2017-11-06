@@ -1,0 +1,24 @@
+<h3 class="post-title">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <span class="separator"> &middot; </span>
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+	{{ .Date.Format "2 Jan 2006" }}
+    </time>
+    {{if isset .Params "tags" }}
+    <span class="taglist">
+	&middot;
+	{{ range .Params.tags }}
+	<a href="{{ "/tags/" | absURL }}{{ . | urlize }}">{{ . }}</a>
+	{{ end }}
+    </span>
+    {{ end }}
+    {{if isset .Params "categories" }}
+    <span class="taglist">
+	&middot;
+	{{ range .Params.categories }}
+	<a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>
+	{{ end }}
+    </span>
+    {{ end }}
+</h3>
+
