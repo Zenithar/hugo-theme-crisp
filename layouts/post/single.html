@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}">
+    <head>
+        {{ partial "header.html" . }}
+    </head>
+    <div id="layout" class="pure-g">
+        <div class="sidebar pure-u-1 pure-u-md-1-6">
+            {{ partial "sidebar.html" . }}
+        </div>
+        <div class="content pure-u-1 pure-u-md-5-6">
+            <div class="article singlepage" id="{{ .Slug }}" class="{{ .Type }}">
+                <div class="post-stamp">
+                    <h1 class="post-title">{{ .Title }}</h1>
+                    <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}{{ if not .Site.Params.hideReadingTime }} &middot; {{ .ReadingTime }} minute read{{ end }}</span>
+                    {{ if isset .Params "categories" }}
+                        <span class="taglist">
+                            {{ range .Params.categories }}<a class="label" href="{{ "/categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}
+                        </span>
+                    {{ end }}
+
+                    <span class="taglist">
+                    {{if .Params.tags }}
+                        &middot;
+                        {{ range $index, $tag := .Params.tags }}
+                            <a href="/tags/{{ $tag | urlize }}/">{{ $tag }}</a>
+                        {{ end }}
+                    {{ end }}
+                    </span>
+                </div>
+                {{ .Content }}
+                {{ if .Site.Params.share }}
+                    {{ if ne .Site.Params.share "none" }}
+                        {{ partial "share.html" . }}
+                    {{ end }}
+                {{ end }}
+                {{ partial "comments.html" . }}
+                {{ partial "footer.html" . }}
+            </div>
+        </div>
+    </body>
+</html>
+

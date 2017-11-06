@@ -1,13 +1,24 @@
-{{ partial "header.html" . }}
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}">
+    <head>
+        {{ partial "header.html" . }}
+    </head>
+    <body>
+    <div id="layout" class="pure-g">
+        <div class="sidebar pure-u-1 pure-u-md-1-6">
+            {{ partial "sidebar.html" . }}
+        </div>
+        <div class="content pure-u-1 pure-u-md-5-6">
+            <div class="index-list">
+                {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+                {{ range $paginator.Pages }}
+                    {{ .Render "li" }}
+                    {{ end }}
+                {{ partial "pagination.html" $paginator }}
+            </div>
+            {{ partial "footer.html" . }}
+        </div>
+    </div>
+    </body>
+</html>
 
-<main id="content">
-{{ $paginator := .Paginator }}
-	<h1 class="post-title">{{ .Title }}</h1> 
-    {{ range $index, $page := .Paginator.Pages }}
-        {{ .Render "li" }}
-    {{ end }}
-
-    {{ partial "pagination.html" $paginator }}
-</main>
-
-{{ partial "footer.html" . }}

@@ -81,13 +81,13 @@
           </a>
       </li>
       <li class="pinterest">
-          <script>
-						var imgurl = "{{ .Site.BaseURL }}logo.png";
-						var firstimg = document.getElementsByClassName("{{ .Type }}")[0].getElementsByTagName("img")[0];
-						if (firstimg !== undefined) {
-							imgurl = firstimg.src;
-						}
-						document.write('<a href="http://pinterest.com/pin/create/button/?url={{ .Permalink | safeURL }}&amp;media=' + imgurl + '&amp;description={{ .Title }}" class="popup">');
+            <script>
+                var imgurl = "{{ .Site.BaseURL }}logo.png";
+                var firstimg = document.getElementsByClassName("content")[0].getElementsByTagName("img")[0];
+                if (firstimg !== undefined) {
+                    imgurl = firstimg.src;
+                }
+                    document.write('<a href="http://pinterest.com/pin/create/button/?url={{ .Permalink | safeURL }}&amp;media=' + imgurl + '&amp;description={{ .Title }}" class="popup">');
 					</script>
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">

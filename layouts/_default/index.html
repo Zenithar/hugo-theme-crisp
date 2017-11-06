@@ -1,0 +1,15 @@
+<div class="{{ .Section }}">
+    {{ if isset .Site.Params "index" }}
+        {{ if eq .Site.Params.index "list" }}
+            {{ .Render "li" }}
+        {{ end }}
+        {{ if eq .Site.Params.index "truncate" }}
+            {{ .Render "truncate" }}
+        {{ end }}
+        {{ if eq .Site.Params.index "full" }}
+            {{ .Render "full" }}
+        {{ end }}
+    {{ else }}
+        {{ .Render "list" }}
+    {{ end }}
+</div>
